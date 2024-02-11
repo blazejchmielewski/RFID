@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+          rel="stylesheet">
+</head>
+<body>
+<div class="button-container">
+    <a th:href="@{/employee}"><button>Zobacz liste użytkowników</button></a>
+</div>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Card Code</th>
+        <th>Creation Date</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:object="${employee}">
+        <td th:text="${employee.id}"></td>
+        <td th:text="${employee.firstName}"></td>
+        <td th:text="${employee.lastName}"></td>
+        <td th:text="${employee.code}"></td>
+        <td th:text="${employee.creationDate}"></td>
+    </tr>
+    </tbody>
+</table>
+<div class="title-container">
+    <h3>Edit</h3>
+</div>
+<div class="form-container">
+    <form action="/newEmployee" method="post" th:object="${employee}">
+        <input type="hidden" th:field="*{id}" />
+        <div class="inputs"><label for="firstName">First Name:</label></div>
+        <div class="inputs"><input type="text" id="firstName" name="firstName"
+                                   th:field="*{firstName}" required/><br/></div>
+        <div class="inputs"><label for="lastName">Last Name:</label></div>
+        <div class="inputs"><input type="text" id="lastName" name="lastName"
+                                   th:field="*{lastName}" required/><br/></div>
+        <div class="inputs"><label for="lastName">Card Code:</label></div>
+        <div class="inputs">
+            <label for="code"></label><select id="code" name="code" th:field="*{code}">
+            <option th:each="code : ${Codes}" th:value="${code}"
+                    th:text="${code}"></option>
+        </select>
+        </div>
+        <div class="input-submit-container"><input class="input-submit" type="submit"
+                                                   value="Edit"/></div>
+    </form>
+</div>
+</body>
+</html>

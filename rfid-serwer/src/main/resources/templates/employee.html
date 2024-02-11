@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee List</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+          rel="stylesheet">
+</head>
+<body>
+<div class="button-container">
+    <a th:href="@{/home}">
+        <button style="margin-right: 40px;">Przejdz do listy
+            logów
+        </button>
+    </a>
+    <a th:href="@{/addEmployee}">
+        <button>Dodaj użytkownika</button>
+    </a>
+</div>
+<div class="title-container"><h3>Lista użytkowników</h3>
+</div>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Card Code</th>
+        <th>Creation Date</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="employee : ${employees}">
+        <td th:text="${employee.id}"></td>
+        <td th:text="${employee.firstName}"></td>
+        <td th:text="${employee.lastName}"></td>
+        <td th:text="${employee.code}"></td>
+        <td>
+            <div class="edit-icon-container">
+                <span th:text="${employee.creationDate}"></span>
+                <a th:href="@{'/edit/' + ${employee.id}}">
+                    <img class="edit-icon"
+                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAY1
+JREFUSEvdlr1KBDEURs+21nYWNoqttYKCvoC1jyAKCoqihVr4g7+FgoXgO/gCioK1PoAIFoLaiQ+gfHADITuZmexEdvHCw
+mY2uScn907YFl2KVpe4/AvwLLAF9AEn9okeaC7jeeAsoFwAczFyDvCSZ/cOfAEjBjwCVorgTcGrwL4l/gAmDXwPDNvzKeA
+2hDcB+1DlnQGuDTAKPNr3DWA3FziEKq+MJ4BvQMZDBpsGbnKA14A9S/QJXAF6plCNBXbHfABok22RetTLwKFX0zHgBVgET
+oPs58BCjq5eB3Y803Hg2cYDwBPQb+NjQJuMRl1j3/TNailThaAPwKCNS03dTuqAQ6hMX5tAtbYKvGnXoObKNAu0CqwmcnU
+KoTrWO+94ozdUanOVmQqqmqq2imRomfGPJS0ybQytA972apzFtKqrnbEDZ4XWMS7qjY5qGiaKvU7OOJyfBVpmrL8wYajRL
+suuwZTfqi6QlFxJc3sOHKtxkpU3uU0wtbn+HFzUXJ1Cta4tX8/VuIldrbW/ezNVH4obSRcAAAAASUVORK5CYII="/>
+                </a>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

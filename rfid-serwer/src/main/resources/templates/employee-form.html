@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Employee</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+          rel="stylesheet">
+</head>
+<body>
+<div class="button-container">
+    <a th:href="@{/employee}"><button>Zobacz liste użytkowników</button></a>
+</div>
+<div class="title-container">
+
+    <h3>Add New Employee</h3>
+</div>
+<div class="form-container">
+    <form action="/newEmployee" method="post" th:object="${employee}">
+        <div class="inputs"><label for="firstName">First Name:</label></div>
+        <div class="inputs"><input type="text" id="firstName" name="firstName"
+                                   th:field="*{firstName}" required/><br/></div>
+        <div class="inputs"><label for="lastName">Last Name:</label></div>
+        <div class="inputs"><input type="text" id="lastName" name="lastName"
+                                   th:field="*{lastName}" required/><br/></div>
+        <div class="input-submit-container"><input class="input-submit" type="submit"
+                                                   value="Add Employee"/></div>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>RFID Codes</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+          rel="stylesheet">
+</head>
+<body>
+<div class="button-container">
+    <a th:href="@{/employee}"><button>Zobacz liste użytkowników</button></a>
+</div>
+<div class="title-container"><h3>Odbicia kart przez pracowników</h3></div>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Code</th>
+        <th>DateTime</th>
+        <th>Employee ID</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="touch : ${getCardTouchesList}">
+        <td th:text="${touch.getId()}"></td>
+        <td th:text="${touch.getCode()}"></td>
+        <td th:text="${touch.getDateTime()}"></td>
+        <td th:text="${touch.getEmployeeId()}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

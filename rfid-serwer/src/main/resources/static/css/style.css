@@ -1,0 +1,144 @@
+* {
+ margin: 0;
+ padding: 0;
+}
+body {
+ background-color: #eee;
+ font-family: 'Roboto', sans-serif;
+ color: black;
+}
+a {
+ cursor: pointer;
+ text-decoration: none;
+ color: white;
+}
+table {
+ width: 60%;
+ margin-left: auto;
+ margin-right: auto;
+ border-collapse: collapse;
+ margin-bottom: 20px;
+ border: 1px solid black;
+}
+thead {
+ background-color: #333;
+ color: #fff;
+}
+th {
+ padding: 10px;
+ text-align: left;
+}
+tr:nth-child(even) {
+ background-color: #c6c6c6;
+}
+td {
+ padding: 10px;
+ text-align: left;
+ border-bottom: 1px solid #ddd;
+ border-bottom: 1px solid black;
+}
+td:first-child {
+ font-weight: bold;
+}
+.button-container {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ padding: 20px;
+}
+button {
+ width: auto;
+ height: 50px;
+ padding: 3px 10px;
+ border-radius: 5px;
+ font-weight: 700;
+ background-color: #333;
+ color: #fff;
+}
+button:hover {
+ background-color: #666;
+ cursor: pointer;
+}
+.title-container {
+ display: flex;
+ text-align: center;
+ justify-content: center;
+ margin-bottom: 10px;
+ font-size: 30px;
+}
+.form-container {
+ width: 500px;
+ height: 300px;
+ padding: 10px;
+ margin-top: 30px;
+ border-radius: 10px;
+ font-weight: 400;
+ background-color: #c1c1c1;
+ margin-right: auto;
+ margin-left: auto;
+ -webkit-box-shadow: 0px 0px 36px -19px rgba(66, 68, 90, 1);
+ -moz-box-shadow: 0px 0px 36px -19px rgba(66, 68, 90, 1);
+ box-shadow: 0px 0px 36px -19px rgba(66, 68, 90, 1);
+}
+form {
+ width: 500px;
+ height: 150px;
+ margin-right: auto;
+ margin-left: auto;
+}
+.input-submit {
+ width: 200px;
+ height: 50px;
+ margin-top: 20px;
+ margin-right: auto;
+ margin-left: auto;
+ border-radius: 10px;
+ background-color: #333;
+ color: #fff;
+}
+.input-submit-container {
+ width: 500px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ margin-left: auto;
+ margin-right: auto;
+}
+.input-container {
+ display:inline-block;
+ align-items: center;
+ justify-content: center;
+ width: 500px;
+ margin-left: auto;
+ margin-right: auto;
+ margin-top: 20px;
+}
+.inputs {
+ width: 500px;
+ color: white;
+ margin-top: 3px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+.inputs label {
+ font-size: 20px;
+}
+.inputs input {
+ font-size: 20px;
+ padding: 0 5px;
+}
+.edit-icon-container {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+}
+.edit-icon-container span {
+ font-size: 16px;
+ margin-right: 10px;
+}
+.edit-icon {
+ width: 20px;
+ height: 20px;
+ cursor: pointer;
+}
